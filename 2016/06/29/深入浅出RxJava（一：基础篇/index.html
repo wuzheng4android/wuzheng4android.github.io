@@ -102,7 +102,7 @@ Observables发出事件,Subscribers处理,一个Obervable可以发出多个事�
 
 Hello Word
 创建一个Obervable对象">
-<meta property="og:updated_time" content="2016-06-29T15:38:56.000Z">
+<meta property="og:updated_time" content="2016-06-29T15:40:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出RxJava（一：基础篇）">
 <meta name="twitter:description" content="基础
@@ -347,25 +347,36 @@ Hello Word
 <li><p>更简洁的代码</p>
 <ul>
 <li>Observable.just就是用来创建只发出一个事件就结束的Observable对象，<br>   <pre><code> Obsercable<string> myObervable=Observable.just(“Hello,word”);</string></code></pre></li>
-<li><p>简化Subscriber  在onNext做一些处理 使用Action1类<br>   <br>  Action1<string> onNextAction = new Action1<string>() {</string></string></p>
-<pre><code>   @Override
-public void call(String s) {
-    System.out.println(s);
-}
-</code></pre><p>  };<br>   </p>
+<li><p>简化Subscriber在onNext做一些处理 使用Action1类</p>
+   <pre>
+  Action1<string> onNextAction = new Action1<string>() {
+          @Override
+       public void call(String s) {
+           System.out.println(s);
+       }
+  };
+   </string></string></pre>
 </li>
-<li><p>subscribe方法有一个重载版本，接受三个Action1类型的参数，分别对应OnNext，OnComplete， OnError函数<br> myObservable.subscribe(onNextAction, onErrorAction, onCompleteAction);<br>我们只需要<br> myObservable.subscribe(onNextAction);</p>
+<li><p>subscribe方法有一个重载版本，接受三个Action1类型的参数，分别对应OnNext，OnComplete， OnError函数<br><pre> myObservable.subscribe(onNextAction, onErrorAction, onCompleteAction);<br>我们只需要<br><pre> myObservable.subscribe(onNextAction);</pre></pre></p>
 </li>
-<li><p>代码最终简化<br>  <br>  Observable.just(“Hello, world!”)<br>   .subscribe(new Action1<string>() {<br>   @Override<br>   public void call(String s) {</string></p>
-<pre><code>System.out.println(s);
-</code></pre><p>   }<br>   });<br>  </p>
+<li><p>代码最终简化</p>
+  <pre> 
+  Observable.just("Hello, world!")
+   .subscribe(new Action1<string>() {
+   @Override
+   public void call(String s) {
+         System.out.println(s);
+   }
+   });
+  </string></pre>
+
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="操作符-Operators"><a href="#操作符-Operators" class="headerlink" title="操作符(Operators)"></a>操作符(Operators)</h3><p>   为了解决对Obserable对象转换问题,用于在Obervable和最终的Subscriber之间修改Obervaable发出的事件<br>   map操作符 就是用来把一个事件转换成另一个事件<br>    <br>    Observable.just(“Hello, world!”)<br>       .map(new Func1<string, string="">() {<br>       @Override<br>       public String call(String s) {<br>           return s + “ -Dan”;<br>       }<br>   })<br>   .subscribe(new Action1<string>() {<br>         @Override<br>         public void call(String s) {<br>               System.out.println(s);<br>         }<br>     });<br>   </string></string,></p>
+<h3 id="操作符-Operators"><a href="#操作符-Operators" class="headerlink" title="操作符(Operators)"></a>操作符(Operators)</h3><p>   为了解决对Obserable对象转换问题,用于在Obervable和最终的Subscriber之间修改Obervaable发出的事件<br>   map操作符 就是用来把一个事件转换成另一个事件<br>    <pre><br>    Observable.just(“Hello, world!”)<br>       .map(new Func1<string, string="">() {<br>       @Override<br>       public String call(String s) {<br>           return s + “ -Dan”;<br>       }<br>   })<br>   .subscribe(new Action1<string>() {<br>         @Override<br>         public void call(String s) {<br>               System.out.println(s);<br>         }<br>     });<br>   </string></string,></pre></p>
 <ul>
-<li>map操作符进阶<br>  map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象<br>  subscriber并不关心返回的字符串，而是想要字符串的hash值<br><br>Observable.just(“Hello, world!”)<br>  .map(new Func1<string, integer="">() {<pre><code>@Override
+<li>map操作符进阶<br>  map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象<br>  subscriber并不关心返回的字符串，而是想要字符串的hash值<br><pre><br>Observable.just(“Hello, world!”)<br>  .map(new Func1<string, integer="">() {<pre><code>@Override
 public Integer call(String s) {
     return s.hashCode();
 }
@@ -373,10 +384,10 @@ public Integer call(String s) {
 public void call(int i) {
       System.out.println(Integer.toString(i)));
 }
-</code></pre>  });<br><ul>
+</code></pre>  });<br></integer></string,></pre><ul>
 <li>进一步优化</li>
 </ul>
-</integer></string,></li>
+</li>
 </ul>
 
       
