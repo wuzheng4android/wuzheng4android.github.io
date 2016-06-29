@@ -98,7 +98,7 @@ Observables(被观察者,事件源) Subscribers(观察者),Observables发出事�
 
 Hello Word
 创建一个Obervable对象">
-<meta property="og:updated_time" content="2016-06-29T16:03:37.000Z">
+<meta property="og:updated_time" content="2016-06-29T16:05:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出RxJava（一：基础篇）">
 <meta name="twitter:description" content="基础
@@ -391,7 +391,8 @@ public void call(String s) {
 </ul>
 <ul>
 <li>map操作符进阶<ul>
-<li>map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象<br>subscriber并不关心返回的字符串，而是想要字符串的hash值<pre>
+<li>map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象</li>
+<li>比如下面的例子subscriber并不关心返回的字符串，而是想要字符串的hash值<pre>
 Observable.just("Hello, world!")
 .map(new Func1<string, integer="">() {
 @Override
