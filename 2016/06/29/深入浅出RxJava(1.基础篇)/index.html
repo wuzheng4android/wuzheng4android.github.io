@@ -104,7 +104,7 @@ Observables发出事件,Subscribers处理,一个Obervable可以发出多个事�
 
 
 Hello W">
-<meta property="og:updated_time" content="2016-06-29T11:53:01.000Z">
+<meta property="og:updated_time" content="2016-06-29T11:56:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wuzheng's Notes">
 <meta name="twitter:description" content="深入浅出RxJava（一：基础篇）
@@ -322,8 +322,8 @@ Hello W">
 sub.onNext(&quot;Hello, world!&quot;);
 //结束
 sub.onCompleted();
-</code></pre>   }<br>}<br>); ` </string></string></li>
-<li>创建一个Subscriber来处理Observable对象发出的字符串                                <pre><code><br>Subscriber<string> mySubscriber = new Subscriber<string>() {<br>@Override<br>public void onNext(String s) { System.out.println(s)<br>; }<br>@Override<br>public void onCompleted() {<br>}<br>@Override<br>public void onError(Throwable e) { }<br>};<br></string></string></code></pre>`                                </li>
+</code></pre>   }<br>}<br>); </string></string></li>
+<li>创建一个Subscriber来处理Observable对象发出的字符串                                <pre><code><br>Subscriber<string> mySubscriber = new Subscriber<string>() {<br>@Override<br>public void onNext(String s) { System.out.println(s)<br>; }<br>@Override<br>public void onCompleted() {<br>}<br>@Override<br>public void onError(Throwable e) { }<br>};<br></string></string></code></pre>                            </li>
 <li>订阅</li>
 </ul>
 </li>
