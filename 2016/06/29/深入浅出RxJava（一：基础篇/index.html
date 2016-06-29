@@ -102,7 +102,7 @@ Observables发出事件,Subscribers处理,一个Obervable可以发出多个事�
 
 Hello Word
 创建一个Obervable对象">
-<meta property="og:updated_time" content="2016-06-29T12:13:35.000Z">
+<meta property="og:updated_time" content="2016-06-29T15:01:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出RxJava（一：基础篇）">
 <meta name="twitter:description" content="基础
@@ -312,7 +312,7 @@ Hello Word
 <li>Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束</li>
 </ul>
 <h3 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h3><ul>
-<li>创建一个Obervable对象  <pre><code>
+<li>创建一个Obervable对象  <pre><code>    
    Observable<string> myObservable = Observable.create(
        new Observable.OnSubscribe<string>() {
            @Override
@@ -325,22 +325,19 @@ Hello Word
        }
    ); 
    </string></string></code></pre></li>
-<li><p>创建一个Subscriber来处理Observable对象发出的字符串</p>
-  <pre><code>
-   Subscriber<string> mySubscriber = new Subscriber<string>() {
-       @Override
-       public void onNext(String s) { 
-           System.out.println(s); 
-       }
-       @Override
-       public void onCompleted() {
+<li><p>创建一个Subscriber来处理Observable对象发出的字符串<br>  <pre><code><br>   Subscriber<string> mySubscriber = new Subscriber<string>() {</string></string></code></pre></p>
+<pre><code> @Override
+ public void onNext(String s) { 
+     System.out.println(s); 
+ }
+ @Override
+ public void onCompleted() {
 
-       }
-      @Override
-       public void onError(Throwable e) {         
-       }
-   };
-  </string></string></code></pre>                            
+ }
+@Override
+ public void onError(Throwable e) {         
+ }
+</code></pre><p>   };<br>                              * 订阅</p>
 </li>
 </ul>
 
