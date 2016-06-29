@@ -295,9 +295,7 @@
         
           
             <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
-<li>Observables(被观察者,事件源)</li>
-<li>Subscribers(观察者)</li>
-<li>Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束</li>
+<li>Observables(被观察者,事件源) Subscribers(观察者),Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束</li>
 </ul>
 <h3 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h3><ul>
 <li><p>创建一个Obervable对象</p>
@@ -345,10 +343,12 @@
   };
    </string></string></pre>
 </li>
-<li><p>subscribe方法有一个重载版本，接受三个Action1类型的参数，分别对应OnNext，OnComplete， OnError函数<br><pre> myObservable.subscribe(onNextAction, onErrorAction, onCompleteAction);<br>我们只需要<br><pre> myObservable.subscribe(onNextAction);</pre></pre></p>
-</li>
-<li><p>代码最终简化</p>
-  <pre> 
+<li><p>subscribe方法有一个重载版本，接受三个Action1类型的参数，分别对应OnNext，OnComplete， OnError函数，我们只需要传入onNextAction</p>
+<pre> 
+   myObservable.subscribe(onNextAction,onErrorAction, onCompleteAction);
+  myObservable.subscribe(onNextAction);
+</pre></li>
+<li>代码最终简化  <pre> 
   Observable.just("Hello, world!")
    .subscribe(new Action1<string>() {
    @Override
@@ -362,17 +362,48 @@
 </ul>
 </li>
 </ul>
-<h3 id="操作符-Operators"><a href="#操作符-Operators" class="headerlink" title="操作符(Operators)"></a>操作符(Operators)</h3><p>   为了解决对Obserable对象转换问题,用于在Obervable和最终的Subscriber之间修改Obervaable发出的事件<br>   map操作符 就是用来把一个事件转换成另一个事件<br>    <pre><br>    Observable.just(“Hello, world!”)<br>       .map(new Func1<string, string="">() {<br>       @Override<br>       public String call(String s) {<br>           return s + “ -Dan”;<br>       }<br>   })<br>   .subscribe(new Action1<string>() {<br>         @Override<br>         public void call(String s) {<br>               System.out.println(s);<br>         }<br>     });<br>   </string></string,></pre></p>
+<h3 id="操作符-Operators"><a href="#操作符-Operators" class="headerlink" title="操作符(Operators)"></a>操作符(Operators)</h3><ul>
+<li><p>为了解决对Obserable对象转换问题,用于在Obervable和最终的Subscriber之间修改Obervaable发出的事件</p>
 <ul>
-<li>map操作符进阶<br>  map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象<br>  subscriber并不关心返回的字符串，而是想要字符串的hash值<br><pre><br>Observable.just(“Hello, world!”)<br>  .map(new Func1<string, integer="">() {<pre><code>@Override
+<li>map操作符 把一个事件转换成另一个事件<pre>
+Observable.just("Hello, world!")
+ .map(new Func1<string, string="">() {
+ @Override
+public String call(String s) {
+ return s + " -Dan";
+ }
+ })
+ .subscribe(new Action1<string>() {
+@Override
+public void call(String s) {
+     System.out.println(s);
+}
+});
+ </string></string,></pre>
+
+</li>
+</ul>
+<ul>
+<li>map操作符进阶<ul>
+<li>map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象<br>subscriber并不关心返回的字符串，而是想要字符串的hash值<pre>
+Observable.just("Hello, world!")
+.map(new Func1<string, integer="">() {
+@Override
 public Integer call(String s) {
-    return s.hashCode();
+  return s.hashCode();
 }
-</code></pre>  })<br>   .subscribe(new Action1<integer>() {<pre><code>@Override
+})
+.subscribe(new Action1<integer>() {
+@Override
 public void call(int i) {
-      System.out.println(Integer.toString(i)));
+    System.out.println(Integer.toString(i)));
 }
-</code></pre>  });<br></integer></string,></pre><ul>
+});
+</integer></string,></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
 <li>进一步优化</li>
 </ul>
 </li>
