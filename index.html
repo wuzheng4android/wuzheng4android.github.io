@@ -300,7 +300,8 @@
 <li>Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束</li>
 </ul>
 <h3 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h3><ul>
-<li>创建一个Obervable对象  <pre><code>    
+<li><p>创建一个Obervable对象</p>
+  <pre><code>    
    Observable<string> myObservable = Observable.create(
        new Observable.OnSubscribe<string>() {
            @Override
@@ -312,20 +313,9 @@
            }
        }
    ); 
-   </string></string></code></pre></li>
-<li><p>创建一个Subscriber来处理Observable对象发出的字符串<br>  <pre><code><br>   Subscriber<string> mySubscriber = new Subscriber<string>() {</string></string></code></pre></p>
-<pre><code> @Override
- public void onNext(String s) { 
-     System.out.println(s); 
- }
- @Override
- public void onCompleted() {
-
- }
-@Override
- public void onError(Throwable e) {         
- }
-</code></pre><p>   };<br>                              * 订阅</p>
+   </string></string></code></pre>
+</li>
+<li><p>创建一个Subscriber来处理Observable对象发出的字符串</p>
 </li>
 </ul>
 
