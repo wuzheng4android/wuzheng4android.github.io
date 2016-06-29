@@ -243,6 +243,125 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/29/深入浅出RxJava(1.基础篇)/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-29T19:15:46+08:00" content="2016-06-29">
+              2016-06-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/29/深入浅出RxJava(1.基础篇)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/29/深入浅出RxJava(1.基础篇)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="深入浅出RxJava（一：基础篇）"><a href="#深入浅出RxJava（一：基础篇）" class="headerlink" title="深入浅出RxJava（一：基础篇）"></a>深入浅出RxJava（一：基础篇）</h3><ul>
+<li>基础<ul>
+<li>Observables(被观察者,事件源)</li>
+<li>Subscribers(观察者)</li>
+<li>Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束</li>
+</ul>
+</li>
+<li>Hello Word<ul>
+<li>创建一个Obervable对象<pre><code>&lt;pre&gt;&lt;code&gt;
+</code></pre>Observable<string> myObservable = Observable.create(<br>new Observable.OnSubscribe<string>() {<br>   @Override<br>   public void call(Subscriber&lt;? super String&gt; sub) {<pre><code>//Observable对象发出一个HelloWord字串
+sub.onNext(&quot;Hello, world!&quot;);
+//结束
+sub.onCompleted();
+</code></pre>   }<br>}<br>); ` </string></string></li>
+<li>创建一个Subscriber来处理Observable对象发出的字符串                                <pre><code><br>Subscriber<string> mySubscriber = new Subscriber<string>() {<br>@Override<br>public void onNext(String s) { System.out.println(s)<br>; }<br>@Override<br>public void onCompleted() {<br>}<br>@Override<br>public void onError(Throwable e) { }<br>};<br></string></string></code></pre>`                                </li>
+<li>订阅</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/17/Android开发者必备网站/" itemprop="url">
                   Android开发者必备网站
                 </a>
@@ -405,7 +524,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -431,8 +550,6 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/wuzheng4android" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-github"></i>
-                  
                   GitHub
                 </a>
               </span>
@@ -440,16 +557,12 @@
               <span class="links-of-author-item">
                 <a href="http://weibo.com/wuzheng4android" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
                   微博
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://www.zhihu.com/people/wu-zheng-24" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-global"></i>
                   
                   知乎
                 </a>

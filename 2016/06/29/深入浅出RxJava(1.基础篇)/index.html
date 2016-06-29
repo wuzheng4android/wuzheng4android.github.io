@@ -84,16 +84,37 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="深入浅出RxJava（一：基础篇）
+基础
+Observables(被观察者,事件源)
+Subscribers(观察者)
+Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束
+
+
+Hello W">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wuzheng's Notes">
+<meta property="og:url" content="http://yoursite.com/2016/06/29/深入浅出RxJava(1.基础篇)/index.html">
 <meta property="og:site_name" content="wuzheng's Notes">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-05-17T15:31:25.000Z">
+<meta property="og:description" content="深入浅出RxJava（一：基础篇）
+基础
+Observables(被观察者,事件源)
+Subscribers(观察者)
+Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束
+
+
+Hello W">
+<meta property="og:updated_time" content="2016-06-29T11:53:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description">
+<meta name="twitter:title" content="wuzheng's Notes">
+<meta name="twitter:description" content="深入浅出RxJava（一：基础篇）
+基础
+Observables(被观察者,事件源)
+Subscribers(观察者)
+Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束
+
+
+Hello W">
 
 
 
@@ -111,13 +132,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    标签 | wuzheng's Notes
-  
-</title>
+  <title>  | wuzheng's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +153,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,16 +243,137 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 2 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-29T19:15:46+08:00" content="2016-06-29">
+              2016-06-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/29/深入浅出RxJava(1.基础篇)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/29/深入浅出RxJava(1.基础篇)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Android/" style="font-size: 12px; color: #ccc">Android</a> <a href="/tags/开源/" style="font-size: 12px; color: #ccc">开源</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="深入浅出RxJava（一：基础篇）"><a href="#深入浅出RxJava（一：基础篇）" class="headerlink" title="深入浅出RxJava（一：基础篇）"></a>深入浅出RxJava（一：基础篇）</h3><ul>
+<li>基础<ul>
+<li>Observables(被观察者,事件源)</li>
+<li>Subscribers(观察者)</li>
+<li>Observables发出事件,Subscribers处理,一个Obervable可以发出多个事件,直到结束或者出错,每发出一个事件,就会调用Subriber的onNext()方法,最后调用Subscriber.onComplete()或onError()结束</li>
+</ul>
+</li>
+<li>Hello Word<ul>
+<li>创建一个Obervable对象<pre><code>&lt;pre&gt;&lt;code&gt;
+</code></pre>Observable<string> myObservable = Observable.create(<br>new Observable.OnSubscribe<string>() {<br>   @Override<br>   public void call(Subscriber&lt;? super String&gt; sub) {<pre><code>//Observable对象发出一个HelloWord字串
+sub.onNext(&quot;Hello, world!&quot;);
+//结束
+sub.onCompleted();
+</code></pre>   }<br>}<br>); ` </string></string></li>
+<li>创建一个Subscriber来处理Observable对象发出的字符串                                <pre><code><br>Subscriber<string> mySubscriber = new Subscriber<string>() {<br>@Override<br>public void onNext(String s) { System.out.println(s)<br>; }<br>@Override<br>public void onCompleted() {<br>}<br>@Override<br>public void onError(Throwable e) { }<br>};<br></string></string></code></pre>`                                </li>
+<li>订阅</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/17/Android开发者必备网站/" rel="next" title="Android开发者必备网站">
+                <i class="fa fa-chevron-left"></i> Android开发者必备网站
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -246,6 +382,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/29/深入浅出RxJava(1.基础篇)/"
+           data-title="" data-url="http://yoursite.com/2016/06/29/深入浅出RxJava(1.基础篇)/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -265,8 +409,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -332,6 +485,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#深入浅出RxJava（一：基础篇）"><span class="nav-number">1.</span> <span class="nav-text">深入浅出RxJava（一：基础篇）</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -428,6 +592,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
