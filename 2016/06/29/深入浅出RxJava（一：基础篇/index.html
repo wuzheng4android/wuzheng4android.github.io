@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,RxJava," />
+  <meta name="keywords" content="Android,RxAndroid,RxJava," />
 
 
 
@@ -102,7 +102,7 @@ Observables发出事件,Subscribers处理,一个Obervable可以发出多个事�
 
 Hello Word
 创建一个Obervable对象">
-<meta property="og:updated_time" content="2016-06-29T15:16:47.000Z">
+<meta property="og:updated_time" content="2016-06-29T15:21:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出RxJava（一：基础篇）">
 <meta name="twitter:description" content="基础
@@ -318,7 +318,7 @@ Hello Word
        new Observable.OnSubscribe<string>() {
            @Override
            public void call(Subscriber<? super String> sub) {
-               //Observable对象发出一个HelloWord字串
+               //Observable对象发出一个"Hello,Word"字串
                sub.onNext("Hello, world!");
                //结束
                sub.onCompleted();
@@ -327,21 +327,22 @@ Hello Word
    ); 
    </string></string></code></pre>
 </li>
-<li><p>创建一个Subscriber来处理Observable对象发出的字符串</p>
-  <pre><code>    
-   Subscriber<string> mySubscriber = new Subscriber<string>() {
-       @Override
-       public void onNext(String s) { 
-           System.out.println(s); 
-       }
-       @Override
-       public void onCompleted() {     
-       }
-       @Override
-       public void onError(Throwable e) { 
-      }
-   };
-   </string></string></code></pre></li>
+<li><p>创建一个Subscriber来处理Observable对象发出的字符串<br>  <pre><code><br>   Subscriber<string> mySubscriber = new Subscriber<string>() {</string></string></code></pre></p>
+<pre><code> @Override
+ public void onNext(String s) { 
+     System.out.println(s); 
+ }
+ @Override
+ public void onCompleted() {     
+ }
+ @Override
+ public void onError(Throwable e) { 
+}
+</code></pre><p>   };<br>   </p>
+<ul>
+<li>subscriber订阅observable<br> <pre><code>myObservable.subscribe(mySubscriber);<code><pre>    </pre></code></code></pre></li>
+</ul>
+</li>
 </ul>
 
       
@@ -365,6 +366,8 @@ Hello Word
         <div class="post-tags">
           
             <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/RxAndroid/" rel="tag">#RxAndroid</a>
           
             <a href="/tags/RxJava/" rel="tag">#RxJava</a>
           
@@ -463,7 +466,7 @@ Hello Word
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
