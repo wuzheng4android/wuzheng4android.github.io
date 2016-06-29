@@ -102,7 +102,7 @@ Observables发出事件,Subscribers处理,一个Obervable可以发出多个事�
 
 Hello Word
 创建一个Obervable对象">
-<meta property="og:updated_time" content="2016-06-29T15:10:32.000Z">
+<meta property="og:updated_time" content="2016-06-29T15:15:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出RxJava（一：基础篇）">
 <meta name="twitter:description" content="基础
@@ -328,7 +328,20 @@ Hello Word
    </string></string></code></pre>
 </li>
 <li><p>创建一个Subscriber来处理Observable对象发出的字符串</p>
-</li>
+  <pre><code>    
+   Subscriber<string> mySubscriber = new Subscriber<string>() {
+       @Override
+       public void onNext(String s) { 
+           System.out.println(s); 
+       }
+       @Override
+       public void onCompleted() {     
+        }
+       @Override
+       public void onError(Throwable e) { 
+     }
+   };
+   </string></string></code></pre></li>
 </ul>
 
       

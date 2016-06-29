@@ -316,7 +316,20 @@
    </string></string></code></pre>
 </li>
 <li><p>创建一个Subscriber来处理Observable对象发出的字符串</p>
-</li>
+  <pre><code>    
+   Subscriber<string> mySubscriber = new Subscriber<string>() {
+       @Override
+       public void onNext(String s) { 
+           System.out.println(s); 
+       }
+       @Override
+       public void onCompleted() {     
+        }
+       @Override
+       public void onError(Throwable e) { 
+     }
+   };
+   </string></string></code></pre></li>
 </ul>
 
           
