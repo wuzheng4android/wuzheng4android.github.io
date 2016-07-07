@@ -98,7 +98,7 @@ Observables(被观察者,事件源) Subscribers(观察者),Observables发出事�
 
 Hello Word
 创建一个Obervable对象">
-<meta property="og:updated_time" content="2016-06-29T16:06:45.000Z">
+<meta property="og:updated_time" content="2016-07-07T08:16:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出RxJava（一：基础篇）">
 <meta name="twitter:description" content="基础
@@ -305,117 +305,46 @@ Hello Word
 </ul>
 <h3 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h3><ul>
 <li><p>创建一个Obervable对象</p>
-  <pre><code>    
-   Observable<string> myObservable = Observable.create(
-       new Observable.OnSubscribe<string>() {
-           @Override
-           public void call(Subscriber<? super String> sub) {
-               //Observable对象发出一个"Hello,Word"字串
-               sub.onNext("Hello, world!");
-               //结束
-               sub.onCompleted();
-           }
-       }
-   ); 
-   </string></string></code></pre>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;String&gt; myObservable = Observable.create(</span><br><span class="line">   	<span class="keyword">new</span> Observable.OnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">       	<span class="meta">@Override</span></span><br><span class="line">       	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> String&gt; sub)</span> </span>&#123;</span><br><span class="line">       		<span class="comment">//Observable对象发出一个"Hello,Word"字串</span></span><br><span class="line">           	sub.onNext(<span class="string">"Hello, world!"</span>);</span><br><span class="line">           	<span class="comment">//结束</span></span><br><span class="line">           	sub.onCompleted();</span><br><span class="line">       	&#125;</span><br><span class="line">   	&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建一个Subscriber来处理Observable对象发出的字符串</p>
-  <pre><code>    
-   Subscriber<string> mySubscriber = new Subscriber<string>() {
-       @Override
-       public void onNext(String s) { 
-           System.out.println(s); 
-       }
-       @Override
-       public void onCompleted() {     
-       }
-       @Override
-       public void onError(Throwable e) { 
-      }
-   };
-    </string></string></code></pre></li>
-<li><p>subscriber订阅observable<br>   <pre><code>myObservable.subscribe(mySubscriber);</code></pre></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Subscriber&lt;String&gt; mySubscriber = <span class="keyword">new</span> Subscriber&lt;String&gt;() &#123;</span><br><span class="line">   	<span class="meta">@Override</span></span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123; </span><br><span class="line">   		System.out.println(s); </span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="meta">@Override</span></span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;	 </span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="meta">@Override</span></span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123; </span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>subscriber订阅observable</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myObservable.subscribe(mySubscriber);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
 <li><p>更简洁的代码</p>
 <ul>
-<li>Observable.just就是用来创建只发出一个事件就结束的Observable对象，<br>   <pre><code> Obsercable<string> myObervable=Observable.just(“Hello,word”);</string></code></pre></li>
-<li><p>简化Subscriber在onNext做一些处理 使用Action1类</p>
-   <pre>
-  Action1<string> onNextAction = new Action1<string>() {
-          @Override
-       public void call(String s) {
-           System.out.println(s);
-       }
-  };
-   </string></string></pre>
+<li><p>Observable.just就是用来创建只发出一个事件就结束的Observable对象，</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Obsercable&lt;String&gt; myObervable=Observable.just(“Hello,word<span class="string">");</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>subscribe方法有一个重载版本，接受三个Action1类型的参数，分别对应OnNext，OnComplete， OnError函数，我们只需要传入onNextAction</p>
-<pre> 
-   myObservable.subscribe(onNextAction,onErrorAction, onCompleteAction);
-  myObservable.subscribe(onNextAction);
-</pre></li>
-<li>代码最终简化  <pre> 
-  Observable.just("Hello, world!")
-   .subscribe(new Action1<string>() {
-   @Override
-   public void call(String s) {
-         System.out.println(s);
-   }
-   });
-  </string></pre>
-
+<li><p>简化Subscriber在onNext做一些处理 使用Action1类</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Action1&lt;String&gt; onNextAction = <span class="keyword">new</span> Action1&lt;String&gt;() &#123;</span><br><span class="line"> 	 		<span class="meta">@Override</span></span><br><span class="line">   		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       		System.out.println(s);</span><br><span class="line">   		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>subscribe方法有一个重载版本，接受三个Action1类型的参数，分别对应OnNext，OnComplete， OnError函数，我们只需要传入onNextAction<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myObservable.subscribe(onNextAction,onErrorAction, onCompleteAction);</span><br><span class="line">myObservable.subscribe(onNextAction);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>代码最终简化</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="string">"Hello, world!"</span>)</span><br><span class="line">   	.subscribe(<span class="keyword">new</span> Action1&lt;String&gt;() &#123;</span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">             System.out.println(s);</span><br><span class="line">       &#125;</span><br><span class="line">   	&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="操作符-Operators"><a href="#操作符-Operators" class="headerlink" title="操作符(Operators)"></a>操作符(Operators)</h3><ul>
-<li><p>为了解决对Obserable对象转换问题,用于在Obervable和最终的Subscriber之间修改Obervaable发出的事件</p>
-<ul>
-<li>map操作符 把一个事件转换成另一个事件<pre>
-Observable.just("Hello, world!")
- .map(new Func1<string, string="">() {
- @Override
-public String call(String s) {
- return s + " -Dan";
- }
- })
- .subscribe(new Action1<string>() {
-@Override
-public void call(String s) {
-     System.out.println(s);
-}
-});
- </string></string,></pre>
-
+<li>为了解决对Obserable对象转换问题,用于在Obervable和最终的Subscriber之间修改Obervaable发出的事件<ul>
+<li>map操作符 把一个事件转换成另一个事件<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="string">"Hello, world!"</span>)</span><br><span class="line"> 		.map(<span class="keyword">new</span> Func1&lt;String, String&gt;() &#123;</span><br><span class="line">     	<span class="meta">@Override</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> s + <span class="string">" -Dan"</span>;</span><br><span class="line">     	&#125;</span><br><span class="line"> 		&#125;)</span><br><span class="line"> 		.subscribe(<span class="keyword">new</span> Action1&lt;String&gt;() &#123;</span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">             System.out.println(s);</span><br><span class="line">       &#125;</span><br><span class="line">   	&#125;);</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li>map操作符进阶<ul>
-<li>map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的observable对象</li>
-<li>比如下面的例子subscriber并不关心返回的字符串，而是想要字符串的hash值<pre>
-Observable.just("Hello, world!")
-.map(new Func1<string, integer="">() {
-@Override
-public Integer call(String s) {
-  return s.hashCode();
-}
-})
-.subscribe(new Action1<integer>() {
-@Override
-public void call(int i) {
-    System.out.println(Integer.toString(i)));
-}
-});
-</integer></string,></pre></li>
 </ul>
 </li>
 </ul>
-<ul>
-<li>进一步优化</li>
-</ul>
-</li>
-</ul>
-
+<pre><code>- map操作符进阶
+     - map操作符可以不返回Observable对象返回的类型,可以返回一个新发出的数据类型的        observable对象
+     - 比如下面的例子subscriber并不关心返回的字符串，而是想要字符串的hash值
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="string">"Hello, world!"</span>)</span><br><span class="line">  	.map(<span class="keyword">new</span> Func1&lt;String, Integer&gt;() &#123;</span><br><span class="line">     	<span class="meta">@Override</span></span><br><span class="line">     	<span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">          	<span class="keyword">return</span> s.hashCode();</span><br><span class="line">      	&#125;</span><br><span class="line">  	&#125;)</span><br><span class="line">   	.subscribe(<span class="keyword">new</span> Action1&lt;Integer&gt;() &#123;</span><br><span class="line">      	<span class="meta">@Override</span></span><br><span class="line">      	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">            System.out.println(Integer.toString(i)));</span><br><span class="line">      	&#125;</span><br><span class="line">  	&#125;);</span><br></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
 
