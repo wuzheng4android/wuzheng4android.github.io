@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android,Java," />
 
 
 
@@ -84,15 +84,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wuzheng's Notes">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="第2章 创建和销毁对象创建和销毁对象,何时及如何创建对象,何时及如何让避免创建对象,如何确保实时销毁，如何管理对象销毁之前的必要的清理
+第1条：考虑使用静态工程方法代替构造器静态工厂方法只是返回类的实例的静态方法,与设计模式中的工厂方法模式不同
+Java源码中的例子1234public static Boolean valueOf(boolean b) &amp;#123;    return (b ?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Java 笔记1">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/Effective Java 笔记1/index.html">
 <meta property="og:site_name" content="wuzheng's Notes">
-<meta property="og:description">
+<meta property="og:description" content="第2章 创建和销毁对象创建和销毁对象,何时及如何创建对象,何时及如何让避免创建对象,如何确保实时销毁，如何管理对象销毁之前的必要的清理
+第1条：考虑使用静态工程方法代替构造器静态工厂方法只是返回类的实例的静态方法,与设计模式中的工厂方法模式不同
+Java源码中的例子1234public static Boolean valueOf(boolean b) &amp;#123;    return (b ?">
+<meta property="og:updated_time" content="2016-07-12T09:24:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wuzheng's Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Effective Java 笔记1">
+<meta name="twitter:description" content="第2章 创建和销毁对象创建和销毁对象,何时及如何创建对象,何时及如何让避免创建对象,如何确保实时销毁，如何管理对象销毁之前的必要的清理
+第1条：考虑使用静态工程方法代替构造器静态工厂方法只是返回类的实例的静态方法,与设计模式中的工厂方法模式不同
+Java源码中的例子1234public static Boolean valueOf(boolean b) &amp;#123;    return (b ?">
 
 
 
@@ -110,7 +117,7 @@
   };
 </script>
 
-  <title> wuzheng's Notes </title>
+  <title> Effective Java 笔记1 | wuzheng's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,9 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,9 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -242,10 +247,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/07/12/Effective Java 笔记1/" itemprop="url">
-                  Effective Java 笔记1
-                </a>
+                Effective Java 笔记1
               
             
           </h1>
@@ -292,9 +294,7 @@
       
 
       
-        
-          
-            <h3 id="第2章-创建和销毁对象"><a href="#第2章-创建和销毁对象" class="headerlink" title="第2章 创建和销毁对象"></a>第2章 创建和销毁对象</h3><p>创建和销毁对象,何时及如何创建对象,何时及如何让避免创建对象,如何确保实时销毁，如何管理对象销毁之前的必要的清理</p>
+        <h3 id="第2章-创建和销毁对象"><a href="#第2章-创建和销毁对象" class="headerlink" title="第2章 创建和销毁对象"></a>第2章 创建和销毁对象</h3><p>创建和销毁对象,何时及如何创建对象,何时及如何让避免创建对象,如何确保实时销毁，如何管理对象销毁之前的必要的清理</p>
 <h4 id="第1条：考虑使用静态工程方法代替构造器"><a href="#第1条：考虑使用静态工程方法代替构造器" class="headerlink" title="第1条：考虑使用静态工程方法代替构造器"></a>第1条：考虑使用静态工程方法代替构造器</h4><p>静态工厂方法只是返回类的实例的静态方法,与设计模式中的工厂方法模式不同</p>
 <p>Java源码中的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">valueOf</span><span class="params">(<span class="keyword">boolean</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (b ? TRUE : FALSE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
@@ -330,178 +330,60 @@
 </li>
 </ul>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/17/Android开发者必备网站/" itemprop="url">
-                  Android开发者必备网站
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-17T15:35:21+08:00" content="2016-05-17">
-              2016-05-17
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/17/Android开发者必备网站/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/17/Android开发者必备网站/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Java/" rel="tag">#Java</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <ul>
-<li>CSDN<ul>
-<li>鸿洋：<a href="http://blog.csdn.net/lmj623565791" target="_blank" rel="external">http://blog.csdn.net/lmj623565791</a> </li>
-<li>爱哥：<a href="http://blog.csdn.net/aigestudio" target="_blank" rel="external">http://blog.csdn.net/aigestudio</a> </li>
-<li>老罗：<a href="http://blog.csdn.net/luoshengyang" target="_blank" rel="external">http://blog.csdn.net/luoshengyang</a> </li>
-<li>小巫：<a href="http://blog.csdn.net/wwj_748" target="_blank" rel="external">http://blog.csdn.net/wwj_748</a> </li>
-<li>Mr.Simple：<a href="http://blog.csdn.net/bboyfeiyu" target="_blank" rel="external">http://blog.csdn.net/bboyfeiyu</a> </li>
-<li>任玉刚：<a href="http://blog.csdn.net/singwhatiwanna" target="_blank" rel="external">http://blog.csdn.net/singwhatiwanna</a> </li>
-<li>夏安明：<a href="http://blog.csdn.net/xiaanming" target="_blank" rel="external">http://blog.csdn.net/xiaanming</a> </li>
-<li>徐医生：<a href="http://blog.csdn.net/eclipsexys" target="_blank" rel="external">http://blog.csdn.net/eclipsexys</a> </li>
-<li>郭神：<a href="http://blog.csdn.net/sinyu890807/" target="_blank" rel="external">http://blog.csdn.net/sinyu890807/</a> </li>
-<li>张兴业：<a href="http://blog.csdn.net/xyz_lmn/" target="_blank" rel="external">http://blog.csdn.net/xyz_lmn/</a> </li>
-<li>咪当系欧巴(非常有天赋的Coder)：<a href="http://blog.csdn.net/hellogv" target="_blank" rel="external">http://blog.csdn.net/hellogv</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>个人Blog<ul>
-<li>胡凯(android官方开发教程中文译文项目发起者)：<a href="http://hukai.me/blog/archives/" target="_blank" rel="external">http://hukai.me/blog/archives/</a> </li>
-<li>码农明明桑（有审美细胞的开发者）：<a href="http://blog.isming.me/" target="_blank" rel="external">http://blog.isming.me/</a></li>
-<li>stormzhang：<a href="http://stormzhang.com/posts.html" target="_blank" rel="external">http://stormzhang.com/posts.html</a> </li>
-<li>Coder Robin：<a href="http://coderrobin.com/" target="_blank" rel="external">http://coderrobin.com/</a> </li>
-<li>郝锡强：<a href="http://www.haoxiqiang.info/static/timing.html" target="_blank" rel="external">http://www.haoxiqiang.info/static/timing.html</a> </li>
-<li>Trinea：<a href="http://www.trinea.cn/" target="_blank" rel="external">http://www.trinea.cn/</a> </li>
-<li>农民伯伯：<a href="http://www.cnblogs.com/over140/" target="_blank" rel="external">http://www.cnblogs.com/over140/</a> </li>
-<li>daimajia：<a href="http://blog.daimajia.com/" target="_blank" rel="external">http://blog.daimajia.com/</a> </li>
-<li>stay4it：<a href="http://www.cnblogs.com/stay/" target="_blank" rel="external">http://www.cnblogs.com/stay/</a></li>
-<li>技术小黑屋(段建华) ： <a href="http://droidyue.com/" target="_blank" rel="external">http://droidyue.com/</a></li>
-<li>开发技术前线(simple等人建的聚合网站) <a href="http://www.devtf.cn/" target="_blank" rel="external">http://www.devtf.cn/</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>你要时常去看的网站<ul>
-<li>Android开发者官网(你必须熟练使用翻墙)：<a href="http://developer.android.com/index.html" target="_blank" rel="external">http://developer.android.com/index.html</a> </li>
-<li>GitHub(开源项目就在这里找)：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a> </li>
-<li>开源项目解析：<a href="http://www.codekk.com/open-source-project-analysis" target="_blank" rel="external">http://www.codekk.com/open-source-project-analysis</a> </li>
-<li>在线看源码：<a href="http://androidxref.com/" target="_blank" rel="external">http://androidxref.com/</a> </li>
-<li>Android代码查找：<a href="https://www.codota.com/" target="_blank" rel="external">https://www.codota.com/</a> </li>
-</ul>
-</li>
-</ul>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/17/Android开发者必备网站/" rel="next" title="Android开发者必备网站">
+                <i class="fa fa-chevron-left"></i> Android开发者必备网站
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -509,6 +391,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/12/Effective Java 笔记1/"
+           data-title="Effective Java 笔记1" data-url="http://yoursite.com/2016/07/12/Effective Java 笔记1/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -528,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -595,6 +494,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第2章-创建和销毁对象"><span class="nav-number">1.</span> <span class="nav-text">第2章 创建和销毁对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第1条：考虑使用静态工程方法代替构造器"><span class="nav-number">1.1.</span> <span class="nav-text">第1条：考虑使用静态工程方法代替构造器</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -691,6 +601,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
