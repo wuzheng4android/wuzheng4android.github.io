@@ -302,7 +302,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<h3 id="第一章Android体系与系统结构"><a href="#第一章Android体系与系统结构" class="headerlink" title="第一章Android体系与系统结构"></a>第一章Android体系与系统结构</h3><h4 id="1-1-Google生态系统"><a href="#1-1-Google生态系统" class="headerlink" title="1.1 Google生态系统"></a>1.1 Google生态系统</h4><p>   底层通过最快的C语言保证效率,上层使用Java快速开发</p>
+		<h3 id="第一章-Android体系与系统结构"><a href="#第一章-Android体系与系统结构" class="headerlink" title="第一章 Android体系与系统结构"></a>第一章 Android体系与系统结构</h3><h4 id="1-1-Google生态系统"><a href="#1-1-Google生态系统" class="headerlink" title="1.1 Google生态系统"></a>1.1 Google生态系统</h4><p>   底层通过最快的C语言保证效率,上层使用Java快速开发</p>
 <h4 id="1-2-Android系统架构"><a href="#1-2-Android系统架构" class="headerlink" title="1.2 Android系统架构"></a>1.2 Android系统架构</h4><p>  Android分为四层:Linux内核层,库和运行时,Framework层和应用层</p>
 <ul>
 <li>Linux,Android底层最核心的部分,Linux层包含了Android系统的核心服务,包括系统驱动,进程管理,安全系统等</li>
@@ -318,8 +318,33 @@
 <h4 id="1-4-Android系统源源代码与系统目录"><a href="#1-4-Android系统源源代码与系统目录" class="headerlink" title="1.4 Android系统源源代码与系统目录"></a>1.4 Android系统源源代码与系统目录</h4><ul>
 <li>Markfile机制,一个像Android这样的大型工程，源文件不计其数，不同功能、模块，按类型分别放置在不同的目录中，这些模块通常会有一个叫Makefile的文件来管理。它定义了一系列的规则来指定模块，哪些文件需要编译，以及这些文件该按照怎样的顺序去编译。甚至它还可以配置更复杂的功能操作没比如定义变异鬼泽，打包规则等。因为Makefile就像一个shell脚本，不仅可以使用自己的语法，也能调用操作系统命令。<br><br>最大的好处就是自动化编译，还可以可控制的编译。<br><br>Android通过Makefile来描述各个组件间的联系并指导它们内进行自动化编译。Makefile的语法，指定了各个源代码该如何连接并生成相应的可执行程序。在每一个最小的功能单位目录下都会有一个Makefile文件，将整个源代码联系在一起</li>
 </ul>
-<h3 id="第二章Android开发工具新接触"><a href="#第二章Android开发工具新接触" class="headerlink" title="第二章Android开发工具新接触"></a>第二章Android开发工具新接触</h3><ul>
-<li></li>
+<h3 id="第二章-Android开发工具新接触"><a href="#第二章-Android开发工具新接触" class="headerlink" title="第二章 Android开发工具新接触"></a>第二章 Android开发工具新接触</h3><ul>
+<li>ADB 常用命令<ul>
+<li>android list targete 显示系统中全部Android平台</li>
+<li>adb install -r 应用程序.apk 安装apk</li>
+<li>adb push <local> <remote> 将文件写入手机</remote></local></li>
+<li>adb pull <remote> <local> 从手机获取文件</local></remote></li>
+<li>adb shell -&gt;logcat | grep “abc” 查看log</li>
+<li>adb remount(挂载系统分区) -&gt;adb shell-&gt; cd system/app-&gt; rm * apk</li>
+<li>adb shelll df 查看系统系统盘符</li>
+<li>adb shell pm list packages -f 输出所有已经安装的应用</li>
+<li>adb shell input keyevent 3 按键模拟输入 </li>
+<li>adb shell input touchscreen swip<x1><y1><x2><y2>模拟滑动输入</y2></x2></y1></x1></li>
+<li>adb shell-&gt; dumpys activity acvitivities | grep “tencent” 列出Activity的运行状态<ul>
+<li>adb shell-&gt; pm list packges -f Package管理信息</li>
+<li>adb shell am start -n 包名+类名 启动一个Activity</li>
+<li>adb shell screenrecord /sdcard/demo.mp4 录制屏幕</li>
+<li>adb reboot 重新启动</li>
+</ul>
+<ul>
+<li>ADB命令来源</li>
+</ul>
+<ul>
+<li>/syatem/core/toolbox 和framwork/base/cmds 目录下</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 	
