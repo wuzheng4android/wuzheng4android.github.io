@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#039BE5">
+    <meta name="theme-color" content="#0097A7">
     <meta name="author" content="wuzheng">
     <meta name="description" content="null">
     <meta name="keywords" content="null">
@@ -56,30 +56,81 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <!-- Config CSS -->
 
-<!-- Theme Background -->
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
 
     <style>
         body{
             background-color: #F5F5F5
         }
 		
+		/* blog_info bottom background */
         #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
             background-color: #fff;
-        }
-		
-        #scheme-Paradox .MD-burger-layer {
-            background-color: #666;
-        }
-		
-        #scheme-Paradox .material-back{
-            color: #666;
-        }
-		
-        .material-layout .material-post>.material-nav,
-		.material-layout .material-index>.material-nav,
-        .material-nav a,
-        #scheme-Paradox .material-post_container .material-back{
-            color: #666;
         }
     </style>
 
@@ -104,51 +155,9 @@
         }
     </style>
 
-
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #039BE5
-    }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #039BE5 !important
-    }
-    
-	/* Sidebar User Drop Down Menu Text Color */
-	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #039BE5 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #039BE5 !important
-    }
-    
-    .toTop{
-        background: #00BCD4 !important
-    }
-</style>
 	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
 	
 	<!-- UC Browser Compatible-->
 	<script>
@@ -187,6 +196,7 @@
 				
                 
 	<!-- Back Button -->
+<!--
 	<div class="material-back" id="backhome-div" tabindex="0">
 		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
 			<i class="material-icons" role="presentation">arrow_back</i>
@@ -195,12 +205,27 @@
 			</span>
 		</a>
 	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第2章-创建和销毁对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">第2章 创建和销毁对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第1条：考虑使用静态工程方法代替构造器"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第1条：考虑使用静态工程方法代替构造器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第2条：遇到多个构造器参数时要考虑用构建器-Builder"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第2条：遇到多个构造器参数时要考虑用构建器(Builder)</span></a></li></ol></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
 
 
 <!-- Layouts -->
 
     <!-- Post Module -->
     <div class="material-post_container">
+		
         <div class="material-post mdl-grid">
             <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
@@ -351,8 +376,6 @@
                 
 
 
-				
-
             </div>
 
             <!-- Post Prev & Next Nav -->
@@ -460,7 +483,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            <a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
         </ul>
     </li>
 
@@ -479,9 +502,9 @@
 
     <!-- Article Numebr  -->
     <li>
-        <a href="#">
+        <a href="/archives">
              文章总数
-             <span class="sidebar-badge">3</span>
+             <span class="sidebar-badge">4</span>
         </a>
     </li>
 </ul>
@@ -622,6 +645,7 @@ It will not impact the appearance and can give developers a lot of support :)
 </footer>
                 
 				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
 <script src="/js/js.min.js"></script>
 <script src="/js/nprogress.js"></script>
 
@@ -658,8 +682,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+<!-- Swiftye -->
 
 
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
 
             </main>
         </div>

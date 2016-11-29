@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#039BE5">
+    <meta name="theme-color" content="#0097A7">
     <meta name="author" content="wuzheng">
     <meta name="description" content="null">
     <meta name="keywords" content="null">
@@ -56,30 +56,81 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <!-- Config CSS -->
 
-<!-- Theme Background -->
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
 
     <style>
         body{
             background-color: #F5F5F5
         }
 		
+		/* blog_info bottom background */
         #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
             background-color: #fff;
-        }
-		
-        #scheme-Paradox .MD-burger-layer {
-            background-color: #666;
-        }
-		
-        #scheme-Paradox .material-back{
-            color: #666;
-        }
-		
-        .material-layout .material-post>.material-nav,
-		.material-layout .material-index>.material-nav,
-        .material-nav a,
-        #scheme-Paradox .material-post_container .material-back{
-            color: #666;
         }
     </style>
 
@@ -104,51 +155,9 @@
         }
     </style>
 
-
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #039BE5
-    }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #039BE5 !important
-    }
-    
-	/* Sidebar User Drop Down Menu Text Color */
-	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #039BE5 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #039BE5 !important
-    }
-    
-    .toTop{
-        background: #00BCD4 !important
-    }
-</style>
 	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
 	
 	<!-- UC Browser Compatible-->
 	<script>
@@ -310,6 +319,64 @@
 	
 				
 		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2016/11/24/《Android群英传》读书笔记（二）/">《Android群英传》读书笔记（二）</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+          
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/11/24/《Android群英传》读书笔记（二）/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="wuzheng's avatar">
+            </div>
+            <div>
+                <strong>wuzheng</strong>
+                <span>11月 24, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
 		<p class="article-headline-p"><a href="/2016/11/24/《Android群英传》读书笔记（一）/">《Android群英传》读书笔记（一）</a></p>
 	</div>
 
@@ -452,7 +519,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            <a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
         </ul>
     </li>
 
@@ -471,9 +538,9 @@
 
     <!-- Article Numebr  -->
     <li>
-        <a href="#">
+        <a href="/archives">
              文章总数
-             <span class="sidebar-badge">3</span>
+             <span class="sidebar-badge">4</span>
         </a>
     </li>
 </ul>
@@ -614,6 +681,7 @@ It will not impact the appearance and can give developers a lot of support :)
 </footer>
                 
 				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
 <script src="/js/js.min.js"></script>
 <script src="/js/nprogress.js"></script>
 
@@ -650,8 +718,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+<!-- Swiftye -->
 
 
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
 
             </main>
         </div>
