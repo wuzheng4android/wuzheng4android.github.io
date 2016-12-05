@@ -157,7 +157,7 @@
 
 	<script src="/js/jquery.min.js"></script>
 	
-	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	<link rel="stylesheet" href="/css/highlight/atom-one-dark.css">
 	
 	<!-- UC Browser Compatible-->
 	<script>
@@ -347,7 +347,7 @@
 	
 		<h3 id="第2章-创建和销毁对象"><a href="#第2章-创建和销毁对象" class="headerlink" title="第2章 创建和销毁对象"></a>第2章 创建和销毁对象</h3><p>创建和销毁对象,何时及如何创建对象,何时及如何让避免创建对象,如何确保实时销毁，如何管理对象销毁之前的必要的清理</p>
 <h4 id="第1条：考虑使用静态工程方法代替构造器"><a href="#第1条：考虑使用静态工程方法代替构造器" class="headerlink" title="第1条：考虑使用静态工程方法代替构造器"></a>第1条：考虑使用静态工程方法代替构造器</h4><p>静态工厂方法只是返回类的实例的静态方法,与设计模式中的工厂方法模式不同</p>
-<p>Java源码中的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">valueOf</span><span class="params">(<span class="keyword">boolean</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (b ? TRUE : FALSE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Java源码中的例子<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">valueOf</span><span class="params">(<span class="keyword">boolean</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (b ? TRUE : FALSE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>与构造器相比的优势</p>
 <ul>
@@ -355,9 +355,9 @@
 <li>我们知道构造方法每次都会创建一个新的实例,而当我们需要避免重复创建不必要的对象(或者不可变的类)时通过构造方法去做是做不到的,而静态方法可以为重复的调用返回相同的对象(比如返回的对象需要是一个单例)</li>
 <li>它们可以返回原返回类型的任何子类型对象,构造方法只能返回类本身,而静态方法可以返回它的子类,利用多态的特性使得静态方法更加灵活<br>比如Executors类的各种newxxx方法返回ExecutorService的子类</li>
 <li><p>创建参数化实例的时候,使代码更加简洁<br>调用参数化类的构造器时,即使类型参数很明显也要必须指明<br>在java 1.7之前,如果要实例化一个Hashmap</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br><span class="line"><span class="comment">//使用静态工厂	 	    	</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;K,V&gt;HashMap&lt;K,V&gt;newInstance()&#123;</span><br><span class="line">   	reutrn <span class="keyword">new</span> HashMap&lt;K,V&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;String,List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br><span class="line"><span class="comment">//使用静态工厂	 	    	</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;K,V&gt;HashMap&lt;K,V&gt;newInstance()&#123;</span><br><span class="line">   	reutrn <span class="keyword">new</span> HashMap&lt;K,V&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Java1.7已经实现了类型推导,所以其实也没那么复杂了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,List&lt;String&gt;&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;String,List&lt;String&gt;&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -380,7 +380,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="第2条：遇到多个构造器参数时要考虑用构建器-Builder"><a href="#第2条：遇到多个构造器参数时要考虑用构建器-Builder" class="headerlink" title="第2条：遇到多个构造器参数时要考虑用构建器(Builder)"></a>第2条：遇到多个构造器参数时要考虑用构建器(Builder)</h4><p>当实例化一个类时有很多可选参数的时候,我们或许会写很多不同参数的构造方法,可读性会非常差,并且客户端也不知道在什么时候用什么构造器,这是非常非常糟糕的,同样静态方工厂也不能避免,这个时候我们需要用到构建器,也即设计模式里的Builder模式<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog dialog = <span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>)</span><br><span class="line">         .setCancelable(<span class="keyword">true</span>)</span><br><span class="line">         <span class="comment">//...各种可选参数 想要什么设置什么</span></span><br><span class="line">         .setMessage(<span class="string">"Builder模式"</span>)</span><br><span class="line">         .create();</span><br></pre></td></tr></table></figure></p>
+<h4 id="第2条：遇到多个构造器参数时要考虑用构建器-Builder"><a href="#第2条：遇到多个构造器参数时要考虑用构建器-Builder" class="headerlink" title="第2条：遇到多个构造器参数时要考虑用构建器(Builder)"></a>第2条：遇到多个构造器参数时要考虑用构建器(Builder)</h4><p>当实例化一个类时有很多可选参数的时候,我们或许会写很多不同参数的构造方法,可读性会非常差,并且客户端也不知道在什么时候用什么构造器,这是非常非常糟糕的,同样静态方工厂也不能避免,这个时候我们需要用到构建器,也即设计模式里的Builder模式<br>    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">AlertDialog dialog = <span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>)</span><br><span class="line">         .setCancelable(<span class="keyword">true</span>)</span><br><span class="line">         <span class="comment">//...各种可选参数 想要什么设置什么</span></span><br><span class="line">         .setMessage(<span class="string">"Builder模式"</span>)</span><br><span class="line">         .create();</span><br></pre></td></tr></table></figure></p>
 
 	
 	
