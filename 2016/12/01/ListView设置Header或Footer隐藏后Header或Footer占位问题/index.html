@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        archive_a: 2016/5 | Wuzheng&#39;s Blog
+        ListView设置Header或Footer隐藏后Header或Footer占位问题 | Wuzheng&#39;s Blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="archive_a: 2016/5 | Wuzheng&#39;s Blog">
+    <meta property="og:title" content="ListView设置Header或Footer隐藏后Header或Footer占位问题 | Wuzheng&#39;s Blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -194,215 +194,222 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-		<!-- Paradox Header -->
-		<!-- Daily pic -->
-<div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
-    
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">每当你在感叹，如果有这样一个东西就好了的时候，请注意，其实这是你的机会</a></p>
-    </div>
+                
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
 
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.jpg" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>wuzheng</strong>
-        </div>
-    </div>
-</div>
-
-		<!-- Blog info -->
-<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-	
-    <!-- Search -->
-	
-	<!-- Google -->
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-		<label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-			<i class="material-icons mdl-color-text--white" role="presentation">search</i>
-		</label>
-
-		<form id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-			<input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-			<label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
 			
-			<input type="hidden" name="sitesearch" value="http://yoursite.com">
-		</form>
-	</div>
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="null">
-            <img src="/img/logo.png" alt="logo" />
-        </a>
-    </div>
-
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>Wuzheng&#39;s Blog</strong>
-        </div>
-        <div class="section-spacer"></div>
-        
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/about" title="关于">
-                    <l class="mdl-menu__item mdl-js-ripple-effect"i>
-                        关于
-                    </li>
-                </a>
-            
-        </ul>
-        
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-            <!-- All Site UV -->
-            <a class="index_share-link" href="#">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    <span id="busuanzi_container_site_uv">
-                        <span id="busuanzi_value_site_uv"></span>&nbsp;浏览量
-                    </span>
-                </li>
-            </a>
-            
-            <a class="index_share-link" href="null">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    文章 RSS
-                </li>
-            </a>
-            <a class="index_share-link" href="https://twitter.com/intent/tweet?text=Wuzheng&#39;s Blog&url=http://yoursite.com/&via=wuzheng" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到 Twitter
-                </li>
-            </a>
-            <a class="index_share-link" href="https://plus.google.com/share?url=http://yoursite.com/" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到 Google+
-                </li>
-            </a>
-            <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Wuzheng&#39;s Blog&url=http://yoursite.com/&pic=&searchPic=false&style=simple" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到微博
-                </li>
-            </a>
-        </ul>
-    </div>
-</div>
-
-	
-    
-    
+			
 		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/05/17/Android开发者必备网站/">Android开发者必备网站</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          
-CSDN
-鸿洋：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/05/17/Android开发者必备网站/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="wuzheng's avatar">
-            </div>
-            <div>
-                <strong>wuzheng</strong>
-                <span>5月 17, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/随笔/">随笔</a>
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/05/17/Android开发者必备网站/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".something-else").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            ListView设置Header或Footer隐藏后Header或Footer占位问题
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>wuzheng</strong>
+        <span>12月 01, 2016</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Android/">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Java/">Java</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    <!-- Leancloud Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="/2016/12/01/ListView设置Header或Footer隐藏后Header或Footer占位问题/" class="leancloud-views_num" data-flag-title="ListView设置Header或Footer隐藏后Header或Footer占位问题">
+     &nbsp;浏览量
+</span>
+        </li>
+    </a>
+    
+    
+    
+    <!-- Busuanzi Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="busuanzi_container_page_pv">
+                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+            </span>
+        </li>
+    </a>
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ListView设置Header或Footer隐藏后Header或Footer占位问题&url=http://yoursite.com//2016/12/01/ListView设置Header或Footer隐藏后Header或Footer占位问题/index.html&via=wuzheng" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/12/01/ListView设置Header或Footer隐藏后Header或Footer占位问题/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ListView设置Header或Footer隐藏后Header或Footer占位问题&url=http://yoursite.com//2016/12/01/ListView设置Header或Footer隐藏后Header或Footer占位问题/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
 </div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p>原文链接：<a href="http://www.jianshu.com/p/7b53551cc218" target="_blank" rel="external">http://www.jianshu.com/p/7b53551cc218</a></p>
+<p>在Android开发中，会经常遇到给ListView添加自定义的HeaderView或FooterView，如果我们想隐藏HeaderView或FooterView的时候，一般会调用view的setVisibility方法设置属性值GONE，这时候发现View元素虽然正常的被隐藏了，但是view所占的高度却没有被改变，view所占的位置还是被显示了出来，从而出现一片空白区域</p>
+<p>解决思路：<br>　　通过源码可以看到，在常用的ViewGroup,例如LinearLayout，在onMeasure方法中对每个childView执行measure前，都会判断childView的visibility是否为GONE，如果是GONE，则不对这个childView执行meaure操作，也就是这个childView的高度不会被计算到LinearLayout的高度中，下面是LinearLayout中onMeasure方法的代码片段：<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// See how tall everyone is. Also remember max width.</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i) &#123;</span><br><span class="line">          <span class="keyword">final</span> View child = getVirtualChildAt(i);</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (child == <span class="keyword">null</span>) &#123;</span><br><span class="line">              mTotalLength += measureNullChild(i);</span><br><span class="line">              <span class="keyword">continue</span>;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (child.getVisibility() == View.GONE) &#123;</span><br><span class="line">             i += getChildrenSkipCount(child, i);</span><br><span class="line">             <span class="keyword">continue</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          。。。</span><br></pre></td></tr></table></figure></p>
+<p>但是view在measure自己的时候，并不会去判断自身的visibility是否为GONE，也就是只有在parentView中才会去判断，所以当对LinearLayout里面的一个子View设置Visibility为GONE时，这个View是不会被measure的，最终也是不会被显示的。<br>　　了解了常用ViewGroup是如何测量宽高的，再来看一下ListView里面是如何测量的，通过阅读源码可以看到如果ListView的widthMode、heightMode任意一个是unspecified时，就会调用measureScrapChild方法，如果都不是unspecified的话则会调用measureHeightOfChildren方法，而在这个方法内部中也会调用measureScrapChild方法，一起来看一下measureScrapChild方法源码：<br>　　<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">measureScrapChild</span><span class="params">(View child, <span class="keyword">int</span> position, <span class="keyword">int</span> widthMeasureSpec)</span> </span>&#123;</span><br><span class="line">      LayoutParams p = (LayoutParams) child.getLayoutParams();</span><br><span class="line">      <span class="keyword">if</span> (p == <span class="keyword">null</span>) &#123;</span><br><span class="line">          p = (AbsListView.LayoutParams) generateDefaultLayoutParams();</span><br><span class="line">          child.setLayoutParams(p);</span><br><span class="line">      &#125;</span><br><span class="line">      p.viewType = mAdapter.getItemViewType(position);</span><br><span class="line">      p.forceAdd = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> childWidthSpec = ViewGroup.getChildMeasureSpec(widthMeasureSpec,</span><br><span class="line">              mListPadding.left + mListPadding.right, p.width);</span><br><span class="line">      <span class="keyword">int</span> lpHeight = p.height;</span><br><span class="line">      <span class="keyword">int</span> childHeightSpec;</span><br><span class="line">      <span class="keyword">if</span> (lpHeight &gt; <span class="number">0</span>) &#123;</span><br><span class="line">          childHeightSpec = MeasureSpec.makeMeasureSpec(lpHeight, MeasureSpec.EXACTLY);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          childHeightSpec = MeasureSpec.makeMeasureSpec(<span class="number">0</span>, MeasureSpec.UNSPECIFIED);</span><br><span class="line">      &#125;</span><br><span class="line">      child.measure(childWidthSpec, childHeightSpec);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　<br>可以看出ListView在对ChildView执行meaure之前，并没有判断visibility为GONE的情况，当lpHeight &gt; 0 时，说明在xml布局文件中给ListView设置过了一个尺寸值，所以不会出现问题，而在else里面，设置mode为UNSPECIFIED，目的就是为了让ChildView自己去测量大小，而ChildView在measure自己时是不会考虑visibility情况的，看到这里也就明白了为什么在设置HeaderView或FooterView的visibility为GONE时，会出现空白了！</p>
+<p>解决方法:<br>　　弄明白了原因以后就知道该如何解决这个问题了，不能直接设置HeaderView或FooterView的visibility为GONE，而是需要在HeaderView或FooterView外层嵌套一层parentView，并且设置这个ParentView的layout_height=”wrapcontent”,然后对里面的childView设置visibility为GONE或VISIBLE就会解决这个问题</p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2016/12/01/ListView设置Header或Footer隐藏后Header或Footer占位问题/" 
+            data-url="http://yoursite.com/2016/12/01/ListView设置Header或Footer隐藏后Header或Footer占位问题/"
+            data-title="ListView设置Header或Footer隐藏后Header或Footer占位问题"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/11/29/Android微博、微信分享SDK图片大小限制/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
