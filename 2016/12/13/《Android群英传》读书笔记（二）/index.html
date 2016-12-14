@@ -365,11 +365,11 @@
 <li><p>重写onMesure的过程：</p>
 <ul>
 <li><p>创建一个类继承View:</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onMeasure(widthMeasureSpec, heightMeasureSpec);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span></span>&#123;  </span><br><span class="line">    <span class="keyword">super</span>.onMeasure(widthMeasureSpec, heightMeasureSpec);               </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>看下super.OnMeasure():</p>
-<pre><code><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</span><br><span class="line">    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),</span><br><span class="line">            getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span></span>&#123;   </span><br><span class="line">    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),</span><br><span class="line">            getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre></li>
 </ul>
 <p>我们需要重新setMeasuredDimension函数,在后面添加一个mesureSize方法。</p>
@@ -378,7 +378,7 @@
 <li>继承view重写onDraw()方法</li>
 <li>定义一个Canvans对象,Canvans类似于一个画板,Canvans canvas=new Canvas(bitmap);</li>
 <li><p>传入的bitmap信息是用来存储Canvas上的像素信息</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> canvas.drawBitmap(bitmap1,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span>);</span><br><span class="line">canvas.drawBitmap(bitmap2,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span>);</span><br><span class="line">Canvas mCanvas=<span class="keyword">new</span> Canvas(bitmap2);</span><br><span class="line">mCanvas.drawXXX()</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">canvas.drawBitmap(bitmap1,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span>);                                    </span><br><span class="line">canvas.drawBitmap(bitmap2,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span>);                                     </span><br><span class="line">Canvas mCanvas=<span class="keyword">new</span> Canvas(bitmap2);                                       </span><br><span class="line">mCanvas.drawXXX()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>实际上我们绘图，并不是直接绘制在onDraw()方法指定的那块布上，而是通过改变bitmap，然后让view重绘，从而显示改变之后的bitmap</li>
 </ul>
